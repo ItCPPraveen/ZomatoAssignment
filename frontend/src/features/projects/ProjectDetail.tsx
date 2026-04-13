@@ -3,7 +3,11 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { Box, Typography, CircularProgress, Button, Grid, Paper } from '@mui/material';
 import { useParams, useNavigate } from 'react-router-dom';
 import { DndContext, DragEndEvent, closestCorners, useDroppable } from '@dnd-kit/core';
-
+import { SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable';
+import toast from 'react-hot-toast';
+import { api } from '../../lib/axios';
+import { TaskModal } from '../tasks/TaskModal';
+import { SortableTaskCard } from './SortableTaskCard';
 function ProjectColumn({ column, columnTasks, setEditingTask, setModalOpen, taskIds }: any) {
   const { setNodeRef } = useDroppable({ id: column.id });
   return (
@@ -37,11 +41,7 @@ function ProjectColumn({ column, columnTasks, setEditingTask, setModalOpen, task
     </Grid>
   );
 }
-import { SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable';
-import toast from 'react-hot-toast';
-import { api } from '../../lib/axios';
-import { TaskModal } from '../tasks/TaskModal';
-import { SortableTaskCard } from './SortableTaskCard';
+
 
 export function ProjectDetail() {
   const { id } = useParams();
