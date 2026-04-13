@@ -8,7 +8,7 @@ import { Toaster } from 'react-hot-toast';
 const queryClient = new QueryClient();
 
 async function enableMocking() {
-  if (import.meta.env.MODE !== 'development') {
+  if ((import.meta as any).env.MODE !== 'development') {
     return;
   }
   const { worker } = await import('./mocks/browser');

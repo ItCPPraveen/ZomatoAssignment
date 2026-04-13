@@ -1,6 +1,6 @@
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
-import { Paper, Box, Typography, Chip, Button, Icon } from '@mui/material';
+import { Paper, Box, Typography, Chip } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 
 export function SortableTaskCard({ task, onClick }: { task: any, onClick: () => void }) {
