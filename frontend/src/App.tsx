@@ -1,6 +1,6 @@
-import React from 'react';
+
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
-import { Container, Typography, Box } from '@mui/material';
+import { Container } from '@mui/material';
 import { AuthProvider } from './store/AuthContext';
 import { Navbar } from './components/layout/Navbar';
 import { ProtectedRoute } from './routes/ProtectedRoute';
